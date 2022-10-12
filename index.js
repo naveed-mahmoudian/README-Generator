@@ -17,13 +17,39 @@ const questionsArr = [
   },
   {
     type: "input",
+    name: "installation",
+    message: "Provide installation instructions for your application",
+  },
+  {
+    type: "input",
     name: "usage",
     message: "Provide instructions and examples for usage of your project.",
   },
   {
+    type: "list",
+    name: "license",
+    message: "Choose your license: ",
+    choices: ["Apache", "GNU", "MIT"],
+  },
+  {
     type: "input",
     name: "credits",
-    message: "List yourself and collaborators for credits.",
+    message: "List yourself and collaborators for the credits section.",
+  },
+  {
+    type: "input",
+    name: "tests",
+    message: "Provide examples on how to run tests for you application.",
+  },
+  {
+    type: "input",
+    name: "github",
+    message: "What is your GitHub username?",
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "What is your email address?",
   },
 ];
 
@@ -33,7 +59,17 @@ function getAnswers(questions) {
 }
 
 // Function to write README file
-const writeToFile = ({ title, description, usage, credits }) => {
+const writeToFile = ({
+  title,
+  description,
+  installation,
+  usage,
+  license,
+  credits,
+  tests,
+  github,
+  email,
+}) => {
   fs.writeFile(
     "README.md",
     `# ${title}
