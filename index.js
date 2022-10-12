@@ -6,6 +6,10 @@ const { default: test } = require("node:test");
 // Array of questions for user input
 const questionsArr = [
   {
+    name: "badge",
+    message: "Welcome to the README generator! Press [ENTER] to begin!",
+  },
+  {
     type: "input",
     name: "fullName",
     message: "What is your full name?",
@@ -67,12 +71,36 @@ const questionsArr = [
 function getAnswers(questions) {
   inquirer.prompt(questions).then((answers) => {
     if (answers.license === "Apache") {
-      answers.license = "Apache License covers XYZ";
+      answers.license = `
+      
+      Copyright (c) ${answers.year} ${answers.fullName}
+      
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+   
+          http://www.apache.org/licenses/LICENSE-2.0
+   
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.`;
+
+      answers.badge = `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
+
       writeToFile(answers);
     } else if (answers.license === "GNU") {
-      answers.license = `Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+      answers.license = `
+      
+      Copyright (c) ${answers.year} ${answers.fullName}
+      
+      Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
       Everyone is permitted to copy and distribute verbatim copies
       of this license document, but changing it is not allowed.`;
+
+      answers.badge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
+
       writeToFile(answers);
     } else if (answers.license === "MIT") {
       answers.license = `MIT License
@@ -96,6 +124,9 @@ function getAnswers(questions) {
       LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
       OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
       SOFTWARE.`;
+
+      answers.badge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+
       writeToFile(answers);
     }
   });
@@ -103,6 +134,7 @@ function getAnswers(questions) {
 
 // Function to write README file
 const writeToFile = ({
+  badge,
   title,
   description,
   installation,
@@ -116,6 +148,8 @@ const writeToFile = ({
   fs.writeFile(
     "README.md",
     `# ${title}
+
+${badge}
 
 ## Description
     
