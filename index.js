@@ -85,6 +85,7 @@ ${description}
 - [License](#license)
 - [Credits](#credits)
 - [Tests](#tests)
+- [Questions](#questions)
 
 ## Installation
 
