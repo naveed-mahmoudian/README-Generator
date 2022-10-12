@@ -13,18 +13,17 @@ const questionsArr = [
   {
     type: "input",
     name: "description",
-    message:
-      "Provide a short description explaining the what, why and how of your project.",
+    message: "Provide a short description of your project.",
   },
   {
     type: "input",
     name: "installation",
-    message: "Provide installation instructions for your application",
+    message: "Provide installation info for your project",
   },
   {
     type: "input",
     name: "usage",
-    message: "Provide instructions and examples for usage of your project.",
+    message: "Provide usage info for your project.",
   },
   {
     type: "list",
@@ -40,7 +39,7 @@ const questionsArr = [
   {
     type: "input",
     name: "tests",
-    message: "Provide examples on how to run tests for you application.",
+    message: "Provide testing examples for you application.",
   },
   {
     type: "input",
@@ -108,6 +107,7 @@ ${tests}
 
 ## Questions
 GitHub Username: [${github}](https://www.github.com/${github}/)
+
 Email: ${email}`,
     (error) => {
       if (error) {
