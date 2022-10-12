@@ -38,17 +38,17 @@ const writeToFile = ({ title, description, usage, credits }) => {
     "README.md",
     `# ${title}
 
-    ## Description
+## Description
     
-    ${description}
+${description}
     
-    ## Usage
+## Usage
     
-    ${usage}
+${usage}
     
-    ## Credits
+## Credits
 
-    ${credits}`,
+${credits}`,
     (error) => {
       if (error) {
         console.log(error);
