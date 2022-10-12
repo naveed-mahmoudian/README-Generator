@@ -104,7 +104,11 @@ ${credits}
 
 ## Tests
 
-${tests}`,
+${tests}
+
+## Questions
+GitHub Username: [${github}](https://www.github.com/${github}/)
+Email: ${email}`,
     (error) => {
       if (error) {
         console.log(error);
