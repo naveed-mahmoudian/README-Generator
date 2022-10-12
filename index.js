@@ -36,15 +36,18 @@ function getAnswers(questions) {
 const writeToFile = ({ title, description, usage, credits }) => {
   fs.writeFile(
     "README.md",
-    `#${title}
-    
+    `# ${title}
+
     ## Description
+    
     ${description}
     
     ## Usage
+    
     ${usage}
     
     ## Credits
+
     ${credits}`,
     (error) => {
       if (error) {
