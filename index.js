@@ -1,6 +1,7 @@
 // Packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
+const { default: test } = require("node:test");
 
 // Array of questions for user input
 const questionsArr = [
@@ -77,14 +78,33 @@ const writeToFile = ({
 ## Description
     
 ${description}
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Credits](#credits)
+- [Tests](#tests)
+
+## Installation
+
+${installation}
     
 ## Usage
     
 ${usage}
+
+## License
+${license}
     
 ## Credits
 
-${credits}`,
+${credits}
+
+## Tests
+
+${tests}`,
     (error) => {
       if (error) {
         console.log(error);
