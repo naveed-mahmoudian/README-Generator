@@ -1,7 +1,6 @@
 // Packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-const { default: test } = require("node:test");
 
 // Array of questions for user input
 const questionsArr = [
@@ -191,7 +190,7 @@ Email: ${email}`,
       if (error) {
         console.log(error);
       } else {
-        console.log("Success!");
+        console.log("Successfully created README file!");
       }
     }
   );
