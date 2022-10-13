@@ -37,7 +37,7 @@ const questionsArr = [
   {
     type: "list",
     name: "license",
-    message: "Choose your license: ",
+    message: "Choose your License: ",
     choices: ["Apache", "GNU", "MIT"],
   },
   {
