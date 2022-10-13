@@ -5,38 +5,34 @@ const fs = require("fs");
 // Array of questions for user input
 const questionsArr = [
   {
-    name: "badge",
-    message: "Welcome to the README generator! Press [ENTER] to begin!",
-  },
-  {
     type: "input",
     name: "fullName",
-    message: "What is your full name?",
+    message: "What is your Full Name?: ",
   },
   {
     type: "input",
     name: "year",
-    message: "What year did you create your project?",
+    message: "What Year did you create your project?: ",
   },
   {
     type: "input",
     name: "title",
-    message: "What is your project title?",
+    message: "What is your Project Title?: ",
   },
   {
     type: "input",
     name: "description",
-    message: "Provide a short description of your project.",
+    message: "Provide a Description of your project: ",
   },
   {
     type: "input",
     name: "installation",
-    message: "Provide installation info for your project",
+    message: "Provide Installation info for your project: ",
   },
   {
     type: "input",
     name: "usage",
-    message: "Provide usage info for your project.",
+    message: "Provide Usage info for your project: ",
   },
   {
     type: "list",
@@ -47,22 +43,22 @@ const questionsArr = [
   {
     type: "input",
     name: "credits",
-    message: "List yourself and collaborators for the credits section.",
+    message: "List your project's Credits: ",
   },
   {
     type: "input",
     name: "tests",
-    message: "Provide testing examples for you application.",
+    message: "Provide Testing Examples for your project: ",
   },
   {
     type: "input",
     name: "github",
-    message: "What is your GitHub username?",
+    message: "What is your GitHub username?: ",
   },
   {
     type: "input",
     name: "email",
-    message: "What is your email address?",
+    message: "What is your email address?: ",
   },
 ];
 
@@ -133,7 +129,7 @@ function getAnswers(questions) {
 
 // Function to write README file
 const writeToFile = ({
-  badge,
+  badge = "",
   title,
   description,
   installation,
